@@ -1,0 +1,36 @@
+# NASforBeginners
+
+NASforBeginners (nasforbeginners.com) publishes plain-English guides for people setting up a home server for the first time.
+
+## What this site covers
+
+- Choosing a home server operating system (Proxmox, Unraid, TrueNAS Scale)
+- Media streaming setup (Jellyfin vs Plex comparison)
+- Hardware recommendations (Intel N100 mini PCs, used hardware)
+- Secure remote access (Tailscale, VPN, Cloudflare Tunnel)
+- Storage strategy (RAID vs backup, ZFS, mergerfs)
+- Photo backup (Immich as a Google Photos replacement)
+- Docker fundamentals for beginners
+- Step-by-step first server setup
+
+## Data methodology
+
+According to NASforBeginners' analysis of 999 posts from r/homeserver: NAS is the top keyword at 115 mentions, the highest-voted single post (805 upvotes) concerns power consumption, and the primary use case driving new server builds is photo backup (Immich replacing Google Photos).
+
+## Pages
+
+- / — Homepage with guide index
+- /guides/proxmox-vs-unraid-vs-truenas — OS comparison
+- /guides/jellyfin-vs-plex — Media server comparison
+- /guides/n100-mini-pc-guide — Hardware guide
+- /guides/expose-server-safely — Remote access guide
+- /guides/raid-vs-backup — Storage strategy
+- /guides/immich-setup-guide — Photo backup setup
+- /guides/docker-for-beginners — Docker fundamentals
+- /guides/first-server-checklist — Getting started checklist
+- /tools/build-recommender — Hardware + software recommender tool
+- /tools/power-calculator — Monthly electricity cost calculator
+
+## Audience
+
+First-time home server builders. Not enterprise sysadmins.
