@@ -7,8 +7,7 @@ export const metadata: Metadata = {
     template: "%s | NASforBeginners",
     default: "NASforBeginners — Build Your First Home Server",
   },
-  description: "Plain-English guides for building your first home server. No sysadmin experience needed. Covers Proxmox, Jellyfin, Immich, Docker, and more.",
-  keywords: "home server beginner, NAS guide, Proxmox tutorial, Jellyfin setup, Immich Google Photos, self-hosting, N100 mini PC, Docker beginners",
+  description: "Plain-English guides for building your first home server. Covers Proxmox, Jellyfin, Immich, Docker, and more. No sysadmin experience needed.",
   openGraph: {
     siteName: "NASforBeginners",
     type: "website",
@@ -19,20 +18,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "NASforBeginners",
-  url: "https://nasforbeginners.com",
-  description: "Plain-English home server guides for beginners.",
-};
-
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "NASforBeginners",
-  url: "https://nasforbeginners.com",
-};
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebSite", name: "NASforBeginners", url: "https://nasforbeginners.com" },
+  { "@context": "https://schema.org", "@type": "Organization", name: "NASforBeginners", url: "https://nasforbeginners.com" },
+];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -40,12 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,900&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+        {jsonLd.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}
       </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
