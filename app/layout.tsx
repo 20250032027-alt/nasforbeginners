@@ -5,10 +5,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nasforbeginners.com"),
   title: {
     template: "%s | NASforBeginners",
-    default: "NASforBeginners — Home Server Guides That Actually Make Sense",
+    default: "NASforBeginners — Build Your First Home Server",
   },
-  description: "You want to stop paying for Google Photos and Netflix. A home server can do that. Here is how to build one without a computer science degree.",
-  keywords: "home server, NAS beginner, Proxmox guide, Jellyfin vs Plex, Immich setup, self-hosting, N100 mini PC, Docker home server",
+  description: "Plain-English guides for building your first home server. No sysadmin experience needed. Covers Proxmox, Jellyfin, Immich, Docker, and more.",
+  keywords: "home server beginner, NAS guide, Proxmox tutorial, Jellyfin setup, Immich Google Photos, self-hosting, N100 mini PC, Docker beginners",
   openGraph: {
     siteName: "NASforBeginners",
     type: "website",
@@ -22,22 +22,16 @@ export const metadata: Metadata = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "NASforBeginners",
-  "url": "https://nasforbeginners.com",
-  "description": "Plain-English home server setup guides for beginners.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nasforbeginners.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  name: "NASforBeginners",
+  url: "https://nasforbeginners.com",
+  description: "Plain-English home server guides for beginners.",
 };
 
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "NASforBeginners",
-  "url": "https://nasforbeginners.com",
-  "description": "Plain-English home server setup guides for beginners."
+  name: "NASforBeginners",
+  url: "https://nasforbeginners.com",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -46,7 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,900&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </head>
