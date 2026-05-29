@@ -1,4 +1,5 @@
 "use client";
+import { PageHeader } from "@/app/_guide-nav";
 import { useState } from "react";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 
@@ -36,44 +37,36 @@ export default function BuildRec() {
 
   return (
     <div style={{ background: "var(--bg)", minHeight: "100dvh" }}>
-      <header className="guide-header">
-        <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "3.5rem" }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: ".55rem", textDecoration: "none" }}>
-            <div style={{ width: 26, height: 26, background: "var(--teal)", borderRadius: 7, display: "flex", alignItems: "center", justifyContent: "center" }}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1210" strokeWidth="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <span className="sans" style={{ fontWeight: 700, fontSize: ".9rem", color: "var(--text-1)" }}>NASforBeginners</span>
-          </a>
-          <a href="/" className="sans" style={{ fontSize: ".8rem", color: "var(--text-3)", textDecoration: "none" }}>Home</a>
-        </div>
-      </header>
+      <PageHeader section="Build Recommender" />
 
       <main id="main" style={{ padding: "3.5rem 1.5rem 6rem" }}>
         <div className="wrap" style={{ maxWidth: "40rem" }}>
-          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-4)", textDecoration: "none", fontSize: ".8rem", marginBottom: "2rem" }} className="sans">
+          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-4)", textDecoration: "none", fontSize: ".8rem", marginBottom: "2rem" }} >
             <ArrowLeft size={14} /> Back
           </a>
 
           <span className="eyebrow" style={{ marginBottom: "1.25rem", display: "inline-flex" }}>Build Recommender</span>
-          <h1 className="display" style={{ fontSize: "clamp(1.75rem, 5vw, 2.75rem)", color: "var(--text-1)", marginBottom: ".875rem" }}>
+          <h1  style={{ fontSize: "clamp(1.75rem, 5vw, 2.75rem)", color: "var(--text-1)", marginBottom: ".875rem" }}>
             What should I build?
           </h1>
-          <p className="serif" style={{ color: "var(--text-2)", marginBottom: "3rem", lineHeight: 1.75 }}>
+          <p  style={{ color: "var(--text-2)", marginBottom: "3rem", lineHeight: 1.75 }}>
             Three questions. One concrete answer with hardware, OS, and a prioritized app list.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem", marginBottom: "2.5rem" }}>
             <div>
-              <label className="sans" style={{ display: "flex", justifyContent: "space-between", fontSize: ".82rem", fontWeight: 600, color: "var(--text-2)", marginBottom: ".4rem" }}>
+              <label  style={{ display: "flex", justifyContent: "space-between", fontSize: ".82rem", fontWeight: 600, color: "var(--text-2)", marginBottom: ".4rem" }}>
                 <span>Budget (USD)</span><span style={{ color: "var(--text-1)" }}>${budget}</span>
               </label>
               <input type="range" min={50} max={1500} step={50} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: "100%", accentColor: "var(--teal)" }} />
-              <div className="sans" style={{ display: "flex", justifyContent: "space-between", fontSize: ".68rem", color: "var(--text-4)", marginTop: ".25rem" }}><span>$50</span><span>$1,500+</span></div>
+              <div  style={{ display: "flex", justifyContent: "space-between", fontSize: ".68rem", color: "var(--text-4)", marginTop: ".25rem" }}><span>$50</span><span>$1,500+</span></div>
             </div>
 
             <div>
-              <p className="sans" style={{ fontSize: ".82rem", fontWeight: 600, color: "var(--text-2)", marginBottom: ".6rem" }}>Primary use case</p>
+              <p  style={{ fontSize: ".82rem", fontWeight: 600, color: "var(--text-2)", marginBottom: ".6rem" }}>Primary use case</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: ".5rem" }}>
                 {useCases.map(u => (
-                  <button key={u.v} onClick={() => setUseCase(u.v)} className="sans"
+                  <button key={u.v} onClick={() => setUseCase(u.v)} 
                     style={{ padding: ".65rem 1rem", borderRadius: "var(--radius)", fontSize: ".85rem", fontWeight: 500, cursor: "pointer", textAlign: "left", transition: "all .25s var(--spring)", minHeight: 44, background: useCase === u.v ? "var(--teal-dim)" : "var(--surface)", border: `1px solid ${useCase === u.v ? "var(--teal-border)" : "var(--border)"}`, color: useCase === u.v ? "var(--teal)" : "var(--text-2)" }}>
                     {u.l}
                   </button>
@@ -82,10 +75,10 @@ export default function BuildRec() {
             </div>
 
             <div>
-              <p className="sans" style={{ fontSize: ".82rem", fontWeight: 600, color: "var(--text-2)", marginBottom: ".6rem" }}>Linux comfort level</p>
+              <p  style={{ fontSize: ".82rem", fontWeight: 600, color: "var(--text-2)", marginBottom: ".6rem" }}>Linux comfort level</p>
               <div style={{ display: "flex", flexDirection: "column", gap: ".4rem" }}>
                 {comfortLevels.map(c => (
-                  <button key={c.v} onClick={() => setComfort(c.v)} className="sans"
+                  <button key={c.v} onClick={() => setComfort(c.v)} 
                     style={{ padding: ".65rem 1rem", borderRadius: "var(--radius)", fontSize: ".875rem", fontWeight: 500, cursor: "pointer", textAlign: "left", transition: "all .25s var(--spring)", minHeight: 44, background: comfort === c.v ? "var(--teal-dim)" : "transparent", border: `1px solid ${comfort === c.v ? "var(--teal-border)" : "var(--border)"}`, color: comfort === c.v ? "var(--teal)" : "var(--text-2)" }}>
                     {c.l}
                   </button>
@@ -101,22 +94,22 @@ export default function BuildRec() {
               { label: "Operating System", val: rec.os, color: "var(--teal)" },
             ].map(r => (
               <div key={r.label}>
-                <p className="sans" style={{ fontSize: ".62rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: "var(--text-4)", marginBottom: ".35rem" }}>{r.label}</p>
-                <p className="sans" style={{ fontWeight: 600, fontSize: ".9rem", color: "var(--text-1)" }}>{r.val}</p>
+                <p  style={{ fontSize: ".62rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: "var(--text-4)", marginBottom: ".35rem" }}>{r.label}</p>
+                <p  style={{ fontWeight: 600, fontSize: ".9rem", color: "var(--text-1)" }}>{r.val}</p>
               </div>
             ))}
             <div>
-              <p className="sans" style={{ fontSize: ".62rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: "var(--text-4)", marginBottom: ".6rem" }}>Apps (priority order)</p>
+              <p  style={{ fontSize: ".62rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: "var(--text-4)", marginBottom: ".6rem" }}>Apps (priority order)</p>
               <div style={{ display: "flex", flexDirection: "column", gap: ".35rem" }}>
                 {rec.apps.map((app, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: ".5rem", fontSize: ".875rem", color: "var(--text-2)" }} className="sans">
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: ".5rem", fontSize: ".875rem", color: "var(--text-2)" }} >
                     <ChevronRight size={14} color="var(--teal)" style={{ flexShrink: 0, marginTop: ".15rem" }} />
                     {app}
                   </div>
                 ))}
               </div>
             </div>
-            <div style={{ paddingTop: "1rem", borderTop: "1px solid var(--border)", fontSize: ".8rem", color: "var(--text-3)", lineHeight: 1.65 }} className="serif">
+            <div style={{ paddingTop: "1rem", borderTop: "1px solid var(--border)", fontSize: ".8rem", color: "var(--text-3)", lineHeight: 1.65 }} >
               {rec.note}
             </div>
           </div>

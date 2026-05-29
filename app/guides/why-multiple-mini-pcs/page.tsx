@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div style={{ background: "var(--bg)", minHeight: "100dvh", color: "var(--text-1)", fontFamily: "'Inter', system-ui, sans-serif" }}>
-      <PageHeader />
+      <PageHeader section="Guide" />
       <main id="main" style={{ padding: "3rem 1.5rem 6rem" }}>
         <div className="wrap-prose" style={{ maxWidth: "36rem" }}>
           <nav className="bc" style={{ marginBottom: "2rem" }}><a href="/">Home</a> / <a href="/#guides">Guides</a> / <span>Why Multiple Mini PCs?</span></nav>

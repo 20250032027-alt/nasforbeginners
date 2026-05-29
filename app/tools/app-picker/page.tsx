@@ -1,4 +1,5 @@
 "use client";
+import { PageHeader } from "@/app/_guide-nav";
 import { useState } from "react";
 import { ArrowLeft, Check, X, Minus } from "lucide-react";
 
@@ -22,27 +23,19 @@ export default function AppPicker() {
 
   return (
     <div style={{ background: "var(--bg)", minHeight: "100dvh" }}>
-      <header className="guide-header">
-        <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "3.5rem" }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: ".55rem", textDecoration: "none" }}>
-            <div style={{ width: 26, height: 26, background: "var(--teal)", borderRadius: 7, display: "flex", alignItems: "center", justifyContent: "center" }}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1210" strokeWidth="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <span className="sans" style={{ fontWeight: 700, fontSize: ".9rem", color: "var(--text-1)" }}>NASforBeginners</span>
-          </a>
-          <a href="/" className="sans" style={{ fontSize: ".8rem", color: "var(--text-3)", textDecoration: "none" }}>Home</a>
-        </div>
-      </header>
+      <PageHeader section="App Picker" />
 
       <main id="main" style={{ padding: "3.5rem 1.5rem 6rem" }}>
         <div className="wrap" style={{ maxWidth: "56rem" }}>
-          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-4)", textDecoration: "none", fontSize: ".8rem", marginBottom: "2rem" }} className="sans">
+          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-4)", textDecoration: "none", fontSize: ".8rem", marginBottom: "2rem" }} >
             <ArrowLeft size={14} /> Back
           </a>
 
-          <span className="eyebrow" style={{ marginBottom: "1.25rem", display: "inline-flex", background: "var(--purple-dim)", borderColor: "rgba(155,114,232,.25)", color: "var(--purple)" }}>App Picker</span>
-          <h1 className="display" style={{ fontSize: "clamp(1.75rem, 5vw, 2.75rem)", color: "var(--text-1)", marginBottom: ".875rem" }}>
+          <span className="eyebrow" style={{ marginBottom: "1.25rem", display: "inline-flex",  }}>App Picker</span>
+          <h1  style={{ fontSize: "clamp(1.75rem, 5vw, 2.75rem)", color: "var(--text-1)", marginBottom: ".875rem" }}>
             Which apps should you run?
           </h1>
-          <p className="serif" style={{ color: "var(--text-2)", marginBottom: "3rem", fontSize: "1rem", lineHeight: 1.75, maxWidth: "36rem" }}>
+          <p  style={{ color: "var(--text-2)", marginBottom: "3rem", fontSize: "1rem", lineHeight: 1.75, maxWidth: "36rem" }}>
             Select the cloud services you currently pay for or use. See the self-hosted alternative, how hard it is to set up, and whether it's actually worth it.
           </p>
 
@@ -52,7 +45,7 @@ export default function AppPicker() {
               const on = selected.has(app.slug);
               return (
                 <button key={app.slug} onClick={() => toggle(app.slug)}
-                  className="sans"
+                  
                   style={{
                     background: on ? "var(--teal-dim)" : "var(--surface)",
                     border: `1px solid ${on ? "var(--teal-border)" : "var(--border)"}`,
@@ -76,7 +69,7 @@ export default function AppPicker() {
           {/* Results */}
           {picked.length > 0 && (
             <div>
-              <p className="sans" style={{ fontSize: ".72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: "var(--text-4)", marginBottom: "1.25rem" }}>
+              <p  style={{ fontSize: ".72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", color: "var(--text-4)", marginBottom: "1.25rem" }}>
                 Your self-hosted stack ({picked.length} app{picked.length !== 1 ? "s" : ""})
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: ".75rem" }}>
@@ -84,10 +77,10 @@ export default function AppPicker() {
                   <div key={app.slug} style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "1.5rem" }}>
                     <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "1rem", marginBottom: ".75rem", flexWrap: "wrap" }}>
                       <div>
-                        <p className="sans" style={{ fontWeight: 700, fontSize: "1rem", color: "var(--text-1)" }}>{app.cloud} <span style={{ color: "var(--text-3)", fontWeight: 400 }}>→</span> {app.self}</p>
+                        <p  style={{ fontWeight: 700, fontSize: "1rem", color: "var(--text-1)" }}>{app.cloud} <span style={{ color: "var(--text-3)", fontWeight: 400 }}>→</span> {app.self}</p>
                       </div>
                       <div style={{ display: "flex", gap: ".4rem", flexShrink: 0 }}>
-                        <span className="sans" style={{ fontSize: ".68rem", fontWeight: 700, padding: ".2rem .55rem", borderRadius: "9999px", background: app.effort === "Easy" ? "var(--green-dim)" : app.effort === "Hard" ? "var(--red-dim)" : "var(--amber-dim)", color: app.effort === "Easy" ? "var(--green)" : app.effort === "Hard" ? "var(--red)" : "var(--amber)", border: `1px solid ${app.effort === "Easy" ? "rgba(82,199,122,.25)" : app.effort === "Hard" ? "rgba(224,92,92,.25)" : "rgba(245,166,35,.25)"}` }}>
+                        <span  style={{ fontSize: ".68rem", fontWeight: 700, padding: ".2rem .55rem", borderRadius: "9999px", background: app.effort === "Easy" ? "var(--green-dim)" : app.effort === "Hard" ? "var(--red-dim)" : "var(--amber-dim)", color: app.effort === "Easy" ? "var(--green)" : app.effort === "Hard" ? "var(--red)" : "var(--amber)", border: `1px solid ${app.effort === "Easy" ? "rgba(82,199,122,.25)" : app.effort === "Hard" ? "rgba(224,92,92,.25)" : "rgba(245,166,35,.25)"}` }}>
                           {app.effort} setup
                         </span>
                         <span className={app.worth === "Yes" ? "v-yes" : app.worth === "Depends" ? "v-maybe" : "v-maybe"}>
@@ -95,8 +88,8 @@ export default function AppPicker() {
                         </span>
                       </div>
                     </div>
-                    <p className="serif" style={{ fontSize: ".875rem", color: "var(--text-2)", lineHeight: 1.7, marginBottom: ".6rem" }}>{app.desc}</p>
-                    <p className="sans" style={{ fontSize: ".78rem", color: "var(--text-3)", lineHeight: 1.6, background: "var(--bg-3)", padding: ".6rem .875rem", borderRadius: "var(--radius-sm)", borderLeft: "2px solid var(--border-2)" }}>{app.note}</p>
+                    <p  style={{ fontSize: ".875rem", color: "var(--text-2)", lineHeight: 1.7, marginBottom: ".6rem" }}>{app.desc}</p>
+                    <p  style={{ fontSize: ".78rem", color: "var(--text-3)", lineHeight: 1.6, background: "var(--bg-3)", padding: ".6rem .875rem", borderRadius: "var(--radius-sm)", borderLeft: "2px solid var(--border-2)" }}>{app.note}</p>
                   </div>
                 ))}
               </div>
