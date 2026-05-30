@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/app/_guide-nav";
+import { VideoEmbed } from "@/app/_video-embed";
 
 export const metadata: Metadata = {
   title: "Running a Website from Home | NASforBeginners",
@@ -60,6 +61,13 @@ export default function Page() {
             <p>Whatever you expose to the internet, keep it updated. Public-facing services get probed constantly by automated bots. A Caddy or Nginx server with nothing behind it is fine. An old WordPress install that hasn't been updated in eight months is a real security problem. If you're going to host something publicly from home, make a habit of keeping it current.</p>
           </div>
 
+          
+          <VideoEmbed
+            videoId="VcDQgAwgMyg"
+            title="How to Start Self-Hosting in 2026 | Linux & Docker Beginner Roadmap"
+            channel="SysAdminHub"
+            note="Covers the full path from first container to public-facing services."
+          />
           <div style={{ marginTop: "3rem", padding: "1.35rem", background: "var(--bg-3)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
             <p style={{ fontSize: ".68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".1em", color: "var(--text-4)", marginBottom: ".5rem" }}>Related</p>
             <a href="/guides/expose-server-safely" style={{ textDecoration: "none" }}>

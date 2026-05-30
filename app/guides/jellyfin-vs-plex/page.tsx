@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { VideoEmbed } from "@/app/_video-embed";
 import { PageHeader } from "@/app/_guide-nav";
 
 export const metadata: Metadata = {
@@ -23,6 +24,13 @@ export default function Page() {
             <p style={{ fontSize: ".875rem", color: "var(--text-2)", marginBottom: "1.5rem", lineHeight: 1.7 }}>Subscribe and you'll get one email when it drops. No other emails.</p>
             <a href="/#newsletter" style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", fontWeight: 600, fontSize: ".875rem", background: "var(--accent)", color: "white", padding: ".65rem 1.25rem", borderRadius: "9999px", textDecoration: "none", minHeight: 44 }}>Get notified</a>
           </div>
+          
+          <VideoEmbed
+            videoId="7z4Fzty_zaQ"
+            title="I Tested Jellyfin Against Plex — Here's What Won (2026)"
+            channel="YouTube"
+            note="Published April 2026. An honest side-by-side test covering remote streaming, transcoding, and app support."
+          />
           <div style={{ marginTop: "1.5rem", padding: "1.25rem", background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
             <p style={{ fontSize: ".68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".1em", color: "var(--text-4)", marginBottom: ".45rem" }}>Read while you wait</p>
             <a href="/guides/n100-mini-pc-guide" style={{ textDecoration: "none" }}>

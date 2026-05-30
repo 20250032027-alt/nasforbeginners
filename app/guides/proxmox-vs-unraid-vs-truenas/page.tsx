@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/app/_guide-nav";
+import { VideoEmbed } from "@/app/_video-embed";
 
 export const metadata: Metadata = {
   title: "Proxmox vs Unraid vs TrueNAS — Which Should a Beginner Pick?",
@@ -70,6 +71,13 @@ export default function Page() {
             </table>
           </div>
 
+          
+          <VideoEmbed
+            videoId="3pLSgWBjj_s"
+            title="Proxmox vs Unraid vs TrueNAS: Best Home Lab Platform?"
+            channel="YouTube"
+            note="An English-language side-by-side comparison of all three platforms. Good visual overview to watch alongside reading this guide."
+          />
           <div style={{ marginTop: "3rem", padding: "1.35rem", background: "var(--bg-3)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
             <p style={{ fontSize: ".68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".1em", color: "var(--text-4)", marginBottom: ".5rem" }}>Read next</p>
             <a href="/guides/docker-for-beginners" style={{ textDecoration: "none" }}>

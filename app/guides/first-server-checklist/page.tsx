@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/app/_guide-nav";
+import { VideoEmbed } from "@/app/_video-embed";
 
 export const metadata: Metadata = {
   title: "Your First Server: Step by Step",

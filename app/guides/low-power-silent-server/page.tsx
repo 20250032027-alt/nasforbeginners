@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/app/_guide-nav";
+import { VideoEmbed } from "@/app/_video-embed";
 
 export const metadata: Metadata = {
   title: "Building a Silent, Low-Power Server | NASforBeginners",
@@ -63,6 +64,13 @@ export default function Page() {
             <p>The Power Calculator tool on this site gives estimates based on typical real-world measurements if you want a starting point before buying hardware.</p>
           </div>
 
+          
+          <VideoEmbed
+            videoId="ZE0bDgzjtKg"
+            title="Homelab Beginner's Guide — Start With What You Already Have"
+            channel="MackeyTech"
+            note="Published November 2025. Covers how to make the most of existing hardware, including noise and power considerations."
+          />
           <div style={{ marginTop: "3rem", padding: "1.35rem", background: "var(--bg-3)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
             <p style={{ fontSize: ".68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".1em", color: "var(--text-4)", marginBottom: ".5rem" }}>Related</p>
             <a href="/tools/power-calculator" style={{ textDecoration: "none" }}>

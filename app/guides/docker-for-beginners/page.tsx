@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/app/_guide-nav";
+import { VideoEmbed } from "@/app/_video-embed";
 
 export const metadata: Metadata = {
   title: "Docker for Normal People",
@@ -82,6 +83,13 @@ docker compose up -d`}</pre>
             <p>Unraid has a built-in GUI for Docker. You fill out a form, it generates the compose-equivalent config for you. You rarely write a compose file by hand. That's most of what you're paying $69 for: a web interface that makes Docker approachable without touching a terminal.</p>
           </div>
 
+          
+          <VideoEmbed
+            videoId="VcDQgAwgMyg"
+            title="How to Start Self-Hosting in 2026 | Linux & Docker Beginner Roadmap"
+            channel="SysAdminHub"
+            note="Published December 2025. Covers the full path from installing Docker to running your first containers — picks up right where this guide leaves off."
+          />
           <div style={{ marginTop: "3rem", padding: "1.35rem", background: "var(--bg-3)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
             <p style={{ fontSize: ".68rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".1em", color: "var(--text-4)", marginBottom: ".5rem" }}>Read next</p>
             <a href="/guides/immich-setup-guide" style={{ textDecoration: "none" }}>
