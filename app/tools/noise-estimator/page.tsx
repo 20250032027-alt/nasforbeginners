@@ -46,9 +46,14 @@ export default function NoiseEstimator() {
       <PageHeader section="Noise Estimator" />
       <main id="main" style={{ padding: "3rem 1.5rem 6rem" }}>
         <div className="wrap-sm">
-          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-4)", textDecoration: "none", fontSize: ".78rem", marginBottom: "2rem" }}>
-            <ArrowLeft size={13} /> Back
-          </a>
+                    <div style={{ marginBottom: "2rem" }}>
+            <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-3)", textDecoration: "none", fontSize: ".78rem", fontWeight: 500, transition: "color .2s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--text-1)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "var(--text-3)")}
+            >
+              <ArrowLeft size={13} /> Back to home
+            </a>
+          </div>
           <span className="eyebrow" style={{ marginBottom: "1rem", display: "inline-flex" }}>Noise Estimator</span>
           <h1 style={{ fontWeight: 800, fontSize: "clamp(1.75rem, 5vw, 2.25rem)", letterSpacing: "-.025em", color: "var(--text-1)", marginBottom: ".65rem", lineHeight: 1.2 }}>
             How loud will my server actually be?

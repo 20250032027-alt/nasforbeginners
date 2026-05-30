@@ -47,10 +47,14 @@ export default function StoragePlanner() {
 
       <main id="main" style={{ padding: "3.5rem 1.5rem 6rem" }}>
         <div className="wrap" style={{ maxWidth: "44rem" }}>
-          <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-4)", textDecoration: "none", fontSize: ".8rem", marginBottom: "2rem" }} >
-            <ArrowLeft size={14} /> Back
-          </a>
-
+                    <div style={{ marginBottom: "2rem" }}>
+            <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", color: "var(--text-3)", textDecoration: "none", fontSize: ".78rem", fontWeight: 500, transition: "color .2s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--text-1)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "var(--text-3)")}
+            >
+              <ArrowLeft size={13} /> Back to home
+            </a>
+          </div>
           <span className="eyebrow" style={{ marginBottom: "1.25rem", display: "inline-flex",  }}>Storage Planner</span>
           <h1  style={{ fontSize: "clamp(1.75rem, 5vw, 2.75rem)", color: "var(--text-1)", marginBottom: ".875rem" }}>
             How much storage do you actually need?
